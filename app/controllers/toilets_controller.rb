@@ -13,6 +13,8 @@ class ToiletsController < ApplicationController
 
   def create
     @toilet = Toilet.new(toilet_params)
+    @toilet.user = current_user
+    @toilet.save!
     @toilet.save ? (redirect_to toilet_path(@toilet)) : (render :new)
   end
 
