@@ -1,3 +1,6 @@
+<h1>Toilets nearby</h1>
+<ul>
 <% @toilets.each do |toilet| %>
-  <h4><%= toilet.id toilet.name %></h4>
+  <li><%=toilet.name %></li>
 <% end %>
+</ul>
