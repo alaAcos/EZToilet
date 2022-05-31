@@ -1,5 +1,5 @@
 <!-- app/views/bookings/_form.html.erb -->
-<%= simple_form_for @bookings do |f| %>
+<%= simple_form_for [@toilet, @booking] do |f| %>
   <%= f.input :date, label: 'date', error: 'Date is mandatory, please specify one' as: :date %>
   <%= f.input :duration, label: 'duration',  error: 'Please specify a duration.' as: :date %>
   <%= f.button :submit "Book my EzToilet now!" %>
