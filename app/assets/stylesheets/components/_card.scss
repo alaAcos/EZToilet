@@ -1,9 +1,10 @@
 .cards {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 16px;
-  grid-row-gap: 16px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 16px;
+  .card {
+    width: 400px;
+    height: 400px;
   }
-
-  .card { grid-area: 1 / 1 / 6 / 6; }
+}

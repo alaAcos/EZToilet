@@ -1,13 +1,9 @@
 <h1>Toilets nearby</h1>
 <div class="container">
   <div class="cards">
-    <% @toilets.each do |toilet|%>
-      <div class="card">
-        <ul>
-          <% @toilets.each do |toilet| %>
-            <li><%=toilet.name%></li>
-          <% end %>
-        </ul>
+    <% @toilets.each do |toilet| %>
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path toilet.photos.first.key, height: 300, crop: :fill %>')">
+        <h4><%= toilet.name %></h4>
       </div>
     <% end %>
   </div>
