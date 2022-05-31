@@ -52,9 +52,10 @@
 .description {
   font-size: 12px;
   color:rgb(128, 128, 128);
+  width: 100%;
   white-space: nowrap;
   overflow: hidden;
-  word-wrap: break-word;
+  text-overflow: ellipsis;
   text-shadow: none;
 }
 
