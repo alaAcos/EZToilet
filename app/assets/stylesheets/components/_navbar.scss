@@ -1,7 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: #273043;
-  color: #F92A82 !important;
+  color: $font-c !important;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -13,11 +13,11 @@
 }
 
 .nav-link, .navbar-brand, .navbar-toggler {
-  color: #F92A82 !important;
+  color: $font-c !important;
 }
 
 .nav-link:hover, .navbar-brand:hover {
-  color: #F92A82 !important;
+  color: $font-c !important;
 }
 
 // .navbar-toggler-icon {
