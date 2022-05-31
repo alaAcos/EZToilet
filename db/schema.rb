@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 2022_05_30_143116) do
     t.string "name"
     t.float "price"
     t.text "description"
-    t.boolean "available", default: false
+    t.boolean "available"
     t.integer "rating"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
