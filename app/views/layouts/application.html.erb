@@ -10,9 +10,13 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+
+    <script src=“https://kit.fontawesome.com/25337f634c.js” crossorigin=“anonymous”></script>
   </head>
 
   <body>
+    <%= render 'shared/navbar' %>
     <%= yield %>
+    <%= render 'shared/footer' %>
   </body>
 </html>
