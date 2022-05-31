@@ -1,6 +1,14 @@
 <h1>Toilets nearby</h1>
-<ul>
-  <%@toilets.each do |toilet|%>
-    <li><%=toilet.name%></li>
-  <%end%>
-</ul>
+<div class="container">
+  <div class="cards">
+    <% @toilets.each do |toilet|%>
+      <div class="card">
+        <ul>
+          <% @toilets.each do |toilet| %>
+            <li><%=toilet.name%></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+</div>
