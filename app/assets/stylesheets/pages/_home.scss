@@ -1,1 +1,46 @@
 // Specific CSS for your home-page
+.wraper {
+  background-color: $background-c;
+  // height: 80vh;
+}
+
+.container {
+  background-color: white;
+  padding: 0px;
+  margin-right: 10% auto ;
+  margin-left: 10% auto ;
+  // height: 80vh;
+}
+
+.title {
+  text-align: center;
+  font-family: 'Anton', sans-serif;
+  padding-top: 40px;
+  border-bottom: solid 1px black;
+  background-color: whitesmoke;
+}
+
+
+.title h1 {
+  color: $header-font-c;
+  font-size: 72px;
+  font-style: bold;
+}
+
+.title h2 {
+  color: $header-font-c;
+  font-size: small;
+  font-style: normal;
+}
+
+.main-img {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.main-button {
+  text-align: center;
+  margin: 20px;
+  margin-top: 40px;
+  padding-bottom: 40px;
+}
