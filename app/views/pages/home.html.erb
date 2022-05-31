@@ -5,8 +5,33 @@
       <h2>Take a S*** ! (sit)</h2>
     </div>
     <div class="main-img">
-      <img src="app/assets/images/logo.png" alt="La toilette">
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <%= cl_image_tag("https://res.cloudinary.com/oneiri-ug/image/upload/v1653940743/gabor-monori-VCVI5QUvFAY-unsplash_bosd3r.jpg", width: 400, height: 300, crop: :fill) %>
+          </div>
+          <div class="carousel-item">
+            <%= cl_image_tag("https://res.cloudinary.com/oneiri-ug/image/upload/v1653988058/simon-arthur-EnIdO24CUPo-unsplash_iavm1e.jpg", width: 400, height: 300, crop: :fill) %>
+          </div>
+          <div class="carousel-item">
+            <%= cl_image_tag("https://res.cloudinary.com/oneiri-ug/image/upload/v1653988109/boudewijn-huysmans-P1uBBu-JSvA-unsplash_knkh6c.jpg", width: 400, height: 300, crop: :fill) %>
+          </div>
+          <div class="carousel-item">
+            <%= cl_image_tag("https://res.cloudinary.com/oneiri-ug/image/upload/v1653988203/jan-antonin-kolar-xXc7zUKIhRw-unsplash_golqco.jpg", width: 400, height: 300, crop: :fill) %>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
     </div>
-    <div class="btn btn-success">Pick up your toilet !</div>
+    <div class="main-button">
+      <div class="btn btn-success center">Pick up your toilet !</div>
+    </div>
   </div>
 </div>
