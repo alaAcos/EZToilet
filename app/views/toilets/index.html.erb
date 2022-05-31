@@ -6,9 +6,9 @@
           <div class="card">
             <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path toilet.photos.first.key, height: 300, crop: :fill %>')">
             </div>
-            <div class="information">
+            <div class="information ps-3">
               <div class="name"><h4><%= toilet.name %></h4></div>
-              <div class="description"><p><%= toilet.description %></p></div>
+              <div class="description"><p><%= toilet.description.truncate(30) %></p></div>
               <div class="price"><p><%= toilet.price %></p></div>
             </div>
           </div>
