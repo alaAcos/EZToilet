@@ -1,7 +1,7 @@
 <div class="container">
-<h1>Welcome, <%=@toilet.user.first_name%> <%=@toilet.user.last_name%></h1>
-<h2>You have a new request by <%=@booking.user.first_name%> <%=@booking.user.last_name%></h2>
-<div class="form-container">
+  <h1>Welcome, <%=@toilet.user.first_name%> <%=@toilet.user.last_name%></h1>
+  <h2>You have a new request by <%=@booking.user.first_name%> <%=@booking.user.last_name%></h2>
+  <div class="form-container">
     <%= simple_form_for ([@toilet, @booking]) do |f| %>
       <%= f.input :status, label: 'Confirmation', as: :string %>
       <%= f.submit 'Reply', class: "btn-submit"%>

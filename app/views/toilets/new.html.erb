@@ -1,27 +1,28 @@
 <div class="container">
 
-<div class="title"> <h3>Create your EzToilet!</h3></div>
+<div class="title"><h3>Create your EzToilet!</h3></div>
 <%= simple_form_for [ @toilet ] do |f| %>
-<div class ="form-container">
-  <div class="card-body" id="container-height">
+  <div class ="form-container">
+    <div class="card-body" id="container-height">
       <div class="mb-3">
-  <%= f.input :name %>
+        <%= f.input :name %>
       </div>
       <div class="mb-3">
-  <%= f.input :description %>
+        <%= f.input :description %>
       </div>
       <div class="mb-3">
-  <%= f.input :price %>
+        <%= f.input :price %>
       </div>
       <div class="mb-3">
-  <%= f.input :address %>
+        <!-- TODO: the address field works but looks untidy, 'class: "d-none"' seems to completely remove it instead of just hide the address field and leave the search -->
+        <%= f.input :address,
+                    input_html: { data: { geocoder_target: "address" } },
+                    wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
       </div>
       <div class="mb-3">
-  <%= f.input :photos, as: :file, input_html: {multiple:true} %>
+        <%= f.input :photos, as: :file, input_html: {multiple:true} %>
       </div>
-  <%= f.submit "Add toilet", class: "btn-submit"%>
+      <%= f.button :submit, class: "btn-submit"%>
     </div>
-</div>
+  </div>
 <% end %>
-
-</div>
