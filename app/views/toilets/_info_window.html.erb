@@ -1,2 +1,10 @@
-<h2><%= toilet.name %></h2>
-<p><%= toilet.address %></p>
+<div class="marker-img-container" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path toilet.photos.first.key, width: 150, height: 100, crop: :fit %>')">
+  <h3><%= toilet.name %></h3>
+</div>
+<div class="markeraddress">
+  <p><%= toilet.address %></p>
+</div>
+<div class="markerprice">
+  <h5><%= toilet.price %></h5>
+</div>
+<%= link_to "Take the plunge...", toilet_path(toilet), class:"btn-info" %>

@@ -1,8 +1,42 @@
 .mapboxgl-popup {
   max-width: 200px;
+  background-color: $background-c;
+  color: $font-c;
+  border-radius: 3px;
 }
 
 .mapboxgl-popup-content {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
   font-family: "Open Sans", sans-serif;
+  background-color: $background-c;
+}
+
+.marker-img-container {
+  color: white;
+  font-weight: bold;
+  border-radius: 3px;
+  height: 100px;
+}
+
+.markerprice {
+  font-weight: bold;
+  color: $color1;
+}
+
+.btn-info {
+  border-color: #F92A82;
+  border-style: solid;
+  border-radius: 5px;
+  background-color: white;
+  font-family: "Work Sans", "Helvetica", "sans-serif";
+  font-size: 20px;
+  color: #F92A82;
+  padding: 5px;
+  text-decoration: none;
+  &:hover {
+    background-color: #F92A82;
+    color: white;
+    border-color: #F92A82;
+  }
 }
