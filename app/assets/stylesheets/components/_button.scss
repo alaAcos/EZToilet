@@ -1,0 +1,16 @@
+.btn-submit {
+  border-color: $font-c;
+  border-style: solid;
+  border-radius: 5px;
+  background-color: white;
+  font-family: $body-font;
+  font-size: 20px;
+  color: $font-c;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.btn-submit:hover {
+  background-color: $font-c;
+  color: white;
+}

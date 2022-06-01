@@ -1,0 +1,11 @@
+<div class="container">
+<h1 class="text-center"><%=@toilet.user.first_name%> <%=@toilet.user.last_name%> welcomes you at <%=@toilet.name%></h1>
+<h2 class="text-center">Book a s***t 🚽</h2>
+  <div class="form-container">
+    <%= simple_form_for ([@toilet, @booking]) do |f| %>
+      <%= f.input :date, label: 'Start', as: :datetime %>
+      <%= f.input :duration, label: 'End', as: :datetime %>
+      <%= f.submit 'Book a s***t', class: "btn-submit"%>
+    <% end %>
+  </div>
+</div>
