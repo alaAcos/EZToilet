@@ -16,10 +16,20 @@ class BookingsController < ApplicationController
     @booking.save ? (redirect_to toilet_path(@booking.toilet)) : (render :new)
   end
 
+  def edit
+    @booking = @toilet.bookings.find(params[:id])
+  end
+
+  def update
+    @booking = @toilet.bookings.find(params[:id])
+    @booking.update(booking_params)
+    @booking.save ? (redirect_to toilet_path(@booking.toilet)) : (render :edit)
+  end
+
   private
 
   def booking_params
-    params.require(:booking).permit(:date, :duration)
+    params.require(:booking).permit(:date, :duration, :status)
   end
 
   def set_toilet
