@@ -1,6 +1,6 @@
 <!-- app/views/bookings/_form.html.erb -->
 <%= simple_form_for ([@toilet, @booking]) do |f| %>
-      <%= f.input :date, label: 'Start', as: :datetime %>
-      <%= f.input :duration, label: 'End', as: :datetime %>
-      <%= f.submit 'Book a s***t', class: "btn-submit"%>
-    <% end %>
+  <%= f.input :date, label: 'Start', as: :datetime %>
+  <%= f.input :duration, label: 'End', as: :datetime %>
+  <%= f.submit 'Book a s***t', class: "btn-submit"%>
+<% end %>

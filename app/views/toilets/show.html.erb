@@ -1,17 +1,21 @@
 <div class="container">
-<h1 class="text-center"><%= @toilet.name %></h1>
-<div class="carousel-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @toilet.photos.first.key, height: 300, crop: :fill %>')">
-</div>
+  <h1 class="text-center"><%= @toilet.name %></h1>
+  <div class="carousel-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @toilet.photos.first.key, height: 300, crop: :fill %>')">
+  </div>
 
-<div class="container text-center">
-<%if @toilet.user == current_user%>
-  <h3 class="text-center">You have <%=@toilet.bookings.size%>requests</h3>
-  <%@toilet.bookings.each do |booking|%>
-      <h4>Request from <%=booking.user.first_name%> <%booking.user.last_name%></h4>
-      <%=link_to "Manage request", edit_toilet_booking_path(booking), class: "btn-submit"%>
-  <%end%>
-  </ul>
-<%else%>
-  <div class="m-5 p-3"><%= render "bookings/new" %></div>
-<%end%>
+  <div class="container text-center">
+    <% if @toilet.user == current_user %>
+      <h3 class="text-center">You have <%= @toilet.bookings.size %>requests</h3>
+      <% @toilet.bookings.each do |booking| %>
+        <h4>Request from <%=booking.user.first_name %> <%booking.user.last_name %></h4>
+        <%= link_to "Manage request", edit_toilet_booking_path(booking), class: "btn-submit" %>
+      <% end %>
+    <% else %>
+      <div class="m-5 p-3"><%= render "bookings/new" %></div>
+    <% end %>
+  <div style="width: 100%; height: 600px;"
+    data-controller="mapbox"
+    data-mapbox-markers-value="<%= @marker.to_json %>"
+    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>
