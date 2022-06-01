@@ -3,6 +3,4 @@
 <div class="carousel-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @toilet.photos.first.key, height: 300, crop: :fill %>')">
 </div>
 
-<div class="container text-center">
-  <%=link_to "Book this toilet!", new_toilet_booking_path(@toilet), class:"btn-submit"%>
-</div>
+<div class="m-5 p-3"><%= render "bookings/new" %></div>
