@@ -14,7 +14,7 @@ addresses = ["WMJQ+WPX, Edinburgh of the Seven Seas TDCU 1ZZ, St. Helena", "Lond
   file = URI.open('https://source.unsplash.com/random/?outhouse')
   namearray = Faker::TvShows::TwinPeaks.character.split
   user = User.new(
-    email: "#{Faker::GreekPhilosophers.name.downcase}@#{Faker::App.name.gsub(/[^0-9A-Za-z]/, '')}.com",
+    email: "#{Faker::GreekPhilosophers.name.gsub(/[^0-9A-Za-z]/, '').downcase}@#{Faker::App.name.gsub(/[^0-9A-Za-z]/, '').downcase}.com",
     first_name: namearray[0],
     last_name: namearray[1],
     password: "topsecret",
@@ -31,3 +31,12 @@ addresses = ["WMJQ+WPX, Edinburgh of the Seven Seas TDCU 1ZZ, St. Helena", "Lond
   user.save!
   toilet.save!
 end
+
+admin = User.new(
+  email: "admin@eztoiletadmin.org",
+  first_name: "Toiletman",
+  last_name: "Ass",
+  password: "toiletadmin",
+  password_confirmation: "toiletadmin"
+)
+admin.save!
