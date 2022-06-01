@@ -4,7 +4,8 @@ class ToiletsController < ApplicationController
     @markers = @toilets.geocoded.map do |toilet|
       {
         lat: toilet.latitude,
-        lng: toilet.longitude
+        lng: toilet.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { toilet: toilet })
       }
     end
   end
