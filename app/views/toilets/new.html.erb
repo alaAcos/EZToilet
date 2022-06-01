@@ -1,8 +1,27 @@
+<div class="container">
+
+<div class="title"> <h3>Create your EzToilet!</h3></div>
 <%= simple_form_for [ @toilet ] do |f| %>
+<div class ="form-container">
+  <div class="card-body" id="container-height">
+      <div class="mb-3">
   <%= f.input :name %>
+      </div>
+      <div class="mb-3">
   <%= f.input :description %>
+      </div>
+      <div class="mb-3">
   <%= f.input :price %>
+      </div>
+      <div class="mb-3">
   <%= f.input :address %>
+      </div>
+      <div class="mb-3">
   <%= f.input :photos, as: :file, input_html: {multiple:true} %>
-  <%= f.submit "Add toilet" %>
+      </div>
+  <%= f.submit "Add toilet", class: "btn-submit"%>
+    </div>
+</div>
 <% end %>
+
+</div>
