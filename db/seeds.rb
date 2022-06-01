@@ -11,7 +11,7 @@ require "open-uri"
 
 addresses = ["WMJQ+WPX, Edinburgh of the Seven Seas TDCU 1ZZ, St. Helena", "London SW1A 1AA, United Kingdom", "B1, Port-aux-Français, French Southern Territories", "5M39+4WX, Beaker St, McMurdo Station, Antarctica", "Marinevej 3, Nuuk 3900, Greenland", "1-1 Yobito, Abashiri, Hokkaido 099-2421, Japan"]
 10.times do
-  file = URI.open('https://images.unsplash.com/photo-1502592238809-4cba3c1b80bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8b3V0aG91c2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60')
+  file = URI.open('https://source.unsplash.com/random/?outhouse')
   namearray = Faker::TvShows::TwinPeaks.character.split
   user = User.new(
     email: "#{Faker::GreekPhilosophers.name.downcase}@#{Faker::App.name.gsub(/[^0-9A-Za-z]/, '')}.com",
