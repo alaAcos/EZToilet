@@ -11,3 +11,14 @@
   background-color: $background-c !important;
   color: $font-c;
 }
+
+.page-container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+}
+
+.content-container {
+  background-color: $background-c;
+  margin-top: 50px
+}
