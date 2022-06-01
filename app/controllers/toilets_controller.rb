@@ -1,6 +1,12 @@
 class ToiletsController < ApplicationController
   def index
     @toilets = Toilet.all
+    @markers = @toilets.geocoded.map do |toilet|
+      {
+        lat: toilet.latitude,
+        lng: toilet.longitude
+      }
+    end
   end
 
   def show
@@ -32,6 +38,6 @@ class ToiletsController < ApplicationController
   private
 
   def toilet_params
-    params.require(:toilet).permit(:name, :description, :price, :available, photos: [])
+    params.require(:toilet).permit(:name, :description, :price, :available, :address, photos: [])
   end
 end
