@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   def home
     @toilets_samples = []
     4.times do
-      @toilets_samples << Toilet.find(rand(0..(Toilet.all.length)))
+      @toilets_samples << Toilet.find(rand(Toilet.first.id..(Toilet.all.length)))
     end
   end
 
