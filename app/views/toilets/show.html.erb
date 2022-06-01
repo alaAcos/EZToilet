@@ -9,4 +9,15 @@
 <%end%>
 </div>
 
-<div class="m-5 p-3"><%= render "bookings/new" %></div>
+<div class="container text-center">
+<%if @toilet.user == current_user%>
+  <h3 class="text-center">You have <%=@toilet.bookings.size%>requests</h3>
+  <%@toilet.bookings.each do |booking|%>
+      <h4>Request from <%=booking.user.first_name%> <%booking.user.last_name%></h4>
+      <%=link_to "Manage request", edit_toilet_booking_path(booking), class: "btn-submit"%>
+  <%end%>
+  </ul>
+<%else%>
+  <div class="m-5 p-3"><%= render "bookings/new" %></div>
+<%end%>
+</div>
