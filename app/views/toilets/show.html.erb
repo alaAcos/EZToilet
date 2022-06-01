@@ -1,1 +1,8 @@
-<h4><%= @toilet.name %></h4>
+<div class="container">
+<h1 class="text-center"><%= @toilet.name %></h1>
+<div class="carousel-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @toilet.photos.first.key, height: 300, crop: :fill %>')">
+</div>
+
+<div class="container text-center">
+  <%=link_to "Book this toilet!", new_toilet_booking_path(@toilet), class:"btn-submit"%>
+</div>
