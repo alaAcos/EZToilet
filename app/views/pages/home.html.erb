@@ -7,16 +7,36 @@
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <%= cl_image_tag("https://res.cloudinary.com/oneiri-ug/image/upload/v1653940743/gabor-monori-VCVI5QUvFAY-unsplash_bosd3r.jpg", width: 400, height: 300, crop: :fill) %>
+          <%= link_to toilet_path(@toilets_samples[0]) do %>
+            <div class="card">
+                <div class="card-carousel" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @toilets_samples[0].photos.first.key, width: 400, height: 300, crop: :fill %>')">
+              </div>
+            </div>
+          <% end %>
         </div>
         <div class="carousel-item">
-          <%= cl_image_tag("https://res.cloudinary.com/oneiri-ug/image/upload/v1653988058/simon-arthur-EnIdO24CUPo-unsplash_iavm1e.jpg", width: 400, height: 300, crop: :fill) %>
+          <%= link_to toilet_path(@toilets_samples[1]) do %>
+            <div class="card">
+              <div class="card-carousel" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @toilets_samples[1].photos.first.key, width: 400, height: 300, crop: :fill %>')">
+              </div>
+            </div>
+          <% end %>
         </div>
         <div class="carousel-item">
-          <%= cl_image_tag("https://res.cloudinary.com/oneiri-ug/image/upload/v1653988109/boudewijn-huysmans-P1uBBu-JSvA-unsplash_knkh6c.jpg", width: 400, height: 300, crop: :fill) %>
+          <%= link_to toilet_path(@toilets_samples[2]) do %>
+            <div class="card">
+              <div class="card-carousel" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @toilets_samples[2].photos.first.key, width: 400, height: 300, crop: :fill %>')">
+              </div>
+            </div>
+          <% end %>
         </div>
         <div class="carousel-item">
-          <%= cl_image_tag("https://res.cloudinary.com/oneiri-ug/image/upload/v1653988203/jan-antonin-kolar-xXc7zUKIhRw-unsplash_golqco.jpg", width: 400, height: 300, crop: :fill) %>
+          <%= link_to toilet_path(@toilets_samples[3]) do %>
+            <div class="card">
+              <div class="card-carousel" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @toilets_samples[3].photos.first.key, width: 400, height: 300, crop: :fill %>')">
+              </div>
+            </div>
+          <% end %>
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">

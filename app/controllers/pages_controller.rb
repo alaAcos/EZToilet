@@ -1,5 +1,9 @@
 class PagesController < ApplicationController
   def home
+    @toilets_samples = []
+    4.times do
+      @toilets_samples << Toilet.find(rand(0..(Toilet.all.length)))
+    end
   end
 
   def dashboard
