@@ -13,7 +13,12 @@ class BookingsController < ApplicationController
     @booking = @toilet.bookings.new(booking_params)
     @booking.user = current_user
     @booking.toilet = @toilet
-    @booking.save ? (redirect_to toilet_path(@booking.toilet)) : (render :new)
+    if @booking.save
+      flash[:success] = "Your request successfully submitted! 🚽"
+      redirect_to toilet_path(@booking.toilet)
+    else
+      render :new
+    end
   end
 
   def edit
