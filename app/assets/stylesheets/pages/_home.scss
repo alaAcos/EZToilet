@@ -18,22 +18,22 @@
   text-align: center;
   font-family: 'Anton', sans-serif;
   padding-top: 40px;
-  border-bottom: solid 1px black;
-  background-color: whitesmoke;
+  // border-bottom: solid 1px black; //
+  background-color: white;
 }
 
 .title h1 {
   color: $header-font-c;
   font-size: 72px;
   font-style: bold;
-  background-color: whitesmoke;
+  background-color: white;
 }
 
 .title h2 {
   color: $header-font-c;
   font-size: small;
   font-style: normal;
-  background-color: whitesmoke;
+  background-color: white;
 }
 
 .title h3 {
@@ -52,4 +52,45 @@
   margin: 20px;
   margin-top: 40px;
   padding-bottom: 40px;
+}
+
+.homepage-container {
+  background-color: white;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.video-title {
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    background-color: transparent;
+  }
+
+.video-title h1 {
+    color: $background-c;
+    font-size: 36px;
+    font-style: bold;
+  }
+
+.video-title h2 {
+    color: $background-c;
+    font-size: 56px;
+    font-style: normal;
+  }
+
+.header-p {
+    color: $background-c;
+    font-size: small;
+    font-style: italic;
+    }
+
+.body-container {
+  background-color: white;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-left: 40px;
+  margin-right: 40px;
+  height: 100%;
 }
