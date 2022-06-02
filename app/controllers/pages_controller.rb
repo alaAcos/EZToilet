@@ -8,9 +8,8 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    # route + pages/dashboard.html.erb
-    # displays @bookings = bookings.where(user = current_user)
-    # displays @toilets = Toilet.where(user = current_user)
+    @userbookings = Booking.where(user_id: current_user)
+    @usertoilets = Toilet.where(user: current_user)
     # @toilet.each toilet.bookings
   end
 end
