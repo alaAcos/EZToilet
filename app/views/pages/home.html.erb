@@ -1,41 +1,23 @@
 <!-- The header content -->
 <!-- Source of the code = > https://startbootstrap.com/snippets/video-header -->
-<header>
-<!-- I've added this class above the pasted code and changed the order to see what I was writing -->
-  <div class="d-flex container-fluid">
-    <!-- This div is  intentionally blank. It creates the transparent black overlay over the video which you can modify in the CSS -->
-    <div class="overlay"></div>
-<!-- TO DO: need to solve the problem of the box + text which not appears on the video TICKETS TO OPEN -->
-<!--Text -->
-     <div class="d-flex container h-100" class="center" class="text-banner-container">
-        <!-- <div class="d-flex h-100 text-center align-items-center"> -->
-          <!-- <div class="w-100"> -->
-          <!-- I've added this class and modified the pasted code to sfit with our graphic design font/colors -->
-        <div class="d-flex">
-          <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-            <source src="https://res.cloudinary.com/oneiri-ug/video/upload/v1654118927/toilet-paper.mov" type="video/mp4">
-          </video>
 
-          <div class="video-title"  >
-          <h1> Take a S***!(sit) with EZToilet </h1>
-          <p class="header-p"> With EZToilet, you will be able to s*** wherever you want! <br> In only, <a href="../app/views/toilets/index.html.erb" target="blank"> 1 click </a>, choose the EZToilet of your dreams! </p>
-             <!-- I've added a button to the  pasted code -->
-             <!-- TO DO: button should link to internal part of the homepage -->
-          <div class="btn-header-submit">Discover EZToilet!<div>
-        </div>
-      </div>
-    </div>
-<!-- The HTML5 video element that will create the background video on the header -->
-  </div>
-</div>
-</header>
-
-<!-- Now let's code the body!-->
 <div class="body-wrapper" class="d-flex container-fluid">
   <body>
   <!-- First container -->
+    <div class="overlay"></div>
     <div class="title">
-      <h1>Discover our EZtoilets!</h1>
+      <%= image_tag("eztoiletlogo") %>
+      <h2>Take a S*** ! (sit)</h2>
+    </div>
+    <div class="video-container">
+      <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+        <source src="https://res.cloudinary.com/oneiri-ug/video/upload/v1654118927/toilet-paper.mov" type="video/mp4">
+      </video>
+      <div class="video-overlay-card">
+        <h1> Take a S***!(sit) with EZToilet</h1>
+        <p class="header-p"> With EZToilet, you will be able to s*** wherever you want! <br> In only, <a href="../app/views/toilets/index.html.erb" target="blank"> 1 click </a>, choose the EZToilet of your dreams!</p>
+        <div class="btn-header-submit">Discover EZToilet!</div>
+      </div>
     </div>
       <!-- TO DO : add a grid / Ask Grazia, Stephen or Adrien-->
     <div class="cards-container-homepage">
