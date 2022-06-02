@@ -2,6 +2,8 @@ class Toilet < ApplicationRecord
   belongs_to :user
   has_many :bookings
   has_many :users, through: :bookings
+  has_many :assignments
+  has_many :features, through: :assignments
 
   has_many_attached :photos
   geocoded_by :address
