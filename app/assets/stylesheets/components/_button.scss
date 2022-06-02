@@ -14,3 +14,20 @@
   background-color: $font-c;
   color: white;
 }
+
+.btn-header-submit {
+  border-color: $background-c;
+  border-style: solid;
+  border-radius: 5px;
+  background-color: white;
+  font-family: $background-c;
+  font-size: 20px;
+  color: $font-c;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.btn-header-submit:hover {
+  background-color: $background-c;
+  color: white;
+}

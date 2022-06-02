@@ -4,6 +4,7 @@ class PagesController < ApplicationController
     4.times do
       @toilets_samples << Toilet.find(rand(Toilet.first.id..(Toilet.all.length)))
     end
+    @toilets = Toilet.all.sample(3)
   end
 
   def dashboard
