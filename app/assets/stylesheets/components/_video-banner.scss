@@ -1,35 +1,4 @@
-// Source of the code = > https://startbootstrap.com/snippets/video-header //
-
-header {
-  position: relative;
-  background-color: black;
-  height: 75vh;
-  min-height: 25rem;
-  width: 100%;
-  overflow: hidden;
-}
-
-header video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: 0;
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-}
-
-.video-text-container {
-  position: relative;
-  z-index: 2;
-}
-
-header .overlay {
+.video-container .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -40,16 +9,36 @@ header .overlay {
   z-index: 1;
 }
 
-/* Media Query for devices withi coarse pointers and no hover functionality */
+.video-container {
+  height: 500px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
 
-/* This will use a fallback image instead of a video for devices that commonly do not support the HTML5 video element */
+.video-container video {
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
 
-@media (pointer: coarse) and (hover: none) {
-  header {
-    background: url('https://res.cloudinary.com/oneiri-ug/image/upload/v1654119636/gabe-pierce-4nZ4FQtf2xk-unsplash_fxue01.jpg') black no-repeat center center scroll;
-  }
-
-  header video {
-    display: none;
-  }
+/* Just styling the content of the div, the *magic* in the previous rules */
+.video-container .video-overlay-card {
+  width: 300px;
+  height: 300px;
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  color: $font-c;
+  padding: 8px;
+  background-color: $background-c;
+  border-radius: 5px;
+  border: solid 1px $color1;
+  transform: translateX(-50%);
 }
