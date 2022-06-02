@@ -1,0 +1,30 @@
+<div class="userbookings">
+  <h2>Your bookings:</h2>
+  <div class="dashboardlist">
+    <% @userbookings.each do |booking| %>
+      <div class="dashboardlist-item">
+        <p><%= booking.toilet_id %></p>
+        <p><%= booking.status %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="usertoilets">
+  <h2>Your toilets:</h2>
+  <div class="dashboardlist">
+    <% @usertoilets.each do |toilet| %>
+      <div class="dashboardlist-item">
+        <p><%= toilet.name %></p>
+        <h6>Bookings for this toilet:</h6>
+          <div class="sublist">
+            <% toilet.bookings.each do |booking| %>
+              <div>
+                <p>User: <%= "#{booking.user.first_name} #{booking.user.last_name}" %></p>
+              </div>
+            <% end %>
+          </div>
+      </div>
+    <% end %>
+  </div>
+</div>
