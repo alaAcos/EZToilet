@@ -1,6 +1,11 @@
 class ToiletsController < ApplicationController
   def index
-    @toilets = Toilet.all
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR description ILIKE :query"
+      @toilets = Toilet.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @toilets = Toilet.all
+    end
     @markers = @toilets.geocoded.map do |toilet|
       {
         lat: toilet.latitude,

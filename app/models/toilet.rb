@@ -11,4 +11,11 @@ class Toilet < ApplicationRecord
   validates :price, presence: true, numericality: { greater_than: 0 }
   validates :description, presence: true, length: { in: 10..500 }
   validates :address, presence: true
+
+  include PgSearch::Model
+  pg_search_scope :search_by_name_and_description,
+                  against: [ :name, :description ],
+                  using: {
+                    tsearch: { prefix: true }
+                  }
 end
