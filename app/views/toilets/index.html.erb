@@ -1,4 +1,12 @@
 <div class="container">
+  <%= form_tag toilets_path, method: :get do %>
+    <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a toilet"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
   <div class="cards-container">
     <div class="cards">
       <% @toilets.each do |toilet| %>
