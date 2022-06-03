@@ -15,6 +15,23 @@
   color: white;
 }
 
+.btn-submit-plain {
+  border-color: $font-c;
+  border-style: solid;
+  border-radius: 5px;
+  background-color: $font-c;
+  font-family: $body-font;
+  font-size: 20px;
+  color: white;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.btn-submit-plain:hover {
+  background-color: $font-c;
+  color: $header-font-c;
+}
+
 .btn-header-submit {
   border-color: $background-c;
   border-style: solid;
@@ -23,11 +40,32 @@
   font-family: $background-c;
   font-size: 20px;
   color: $font-c;
+  margin-top: 15px;
   padding: 5px;
+  border-radius: 25px;
   text-decoration: none;
 }
 
 .btn-header-submit:hover {
   background-color: $background-c;
+  color: white;
+}
+
+.btn-home-submit {
+  border-color: $font-c;
+  border-style: solid;
+  border-radius: 5px;
+  background-color: white;
+  font-family: $body-font;
+  font-size: 20px;
+  color: $font-c;
+  padding: 5px;
+  margin: 0 auto;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-home-submit:hover {
+  background-color: $font-c;
   color: white;
 }
