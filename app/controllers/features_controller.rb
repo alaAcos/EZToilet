@@ -13,7 +13,6 @@ class FeaturesController < ApplicationController
     @feature = @toilet.features.new(feature_params)
     @feature.toilet = @toilet
     if @feature.save
-      flash[:success] = " Feature successfully added! 🚽"
       redirect_to toilet_path(@toilet)
     else
       render :new

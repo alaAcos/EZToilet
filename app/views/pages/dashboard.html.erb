@@ -15,7 +15,6 @@
             <div class="dashboardlist-item toiletcolumn">
               <div class="dashboard-info">
                 <p><span class="boldtext">Toilet name:</span> <%= link_to booking.toilet.name, toilet_path(booking.toilet) %></p>
-                <p><span class="boldtext">Duration:</span></p>
                 <p><span class="boldtext">Status:</span> <%= booking.status %></p>
               </div>
               <div class="dashboard-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path booking.toilet.photos.first.key, height: 100, width: 100, crop: :fill %>')">
@@ -38,7 +37,6 @@
                   <% toilet.bookings.each do |booking| %>
                     <div class="sublist-item">
                       <p><span class="boldtext">Guest name:</span> <%= "#{booking.user.first_name} #{booking.user.last_name}" %></p>
-                      <p><span class="boldtext">Duration:</span> <%= "#{booking.duration}" %></p>
                       <p><span class="boldtext">Status:</span> <%= booking.status %>, click <%= link_to "here", edit_toilet_booking_path(booking.toilet, booking) %> to update status.</p>
                     </div>
                   <% end %>
