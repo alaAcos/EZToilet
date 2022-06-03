@@ -1,21 +1,52 @@
-<div class="container">
-  <h1 class="text-center"><%= @toilet.name %></h1>
-  <div class="carousel-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @toilet.photos.first.key, height: 300, crop: :fill %>')">
-  </div>
-
-  <div class="container text-center">
-    <% if @toilet.user == current_user %>
-      <h3 class="text-center">You have <%= @toilet.bookings.size %>requests</h3>
-      <% @toilet.bookings.each do |booking| %>
-        <h4>Request from <%=booking.user.first_name %> <%booking.user.last_name %></h4>
-        <%= link_to "Manage request", edit_toilet_booking_path(booking), class: "btn-submit" %>
+ <div class="container">
+  <div class="row">
+    <div class="col-12">
+    <h1 class="text-center"><%=@toilet.name%></h1>
+    <div class="carousel-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @toilet.photos.first.key, height: 300 %>')">
+    </div>
+    </div>
+    <div class="col-md-8 col-sm-12 col-xs-12">
+      <% if current_user == @toilet.user%>
+        <h3>Welcome, <%= @toilet.user.first_name %> <%= @toilet.user.last_name %>, what you would like to do for your toilet?</h3>
+          <p>
+            <%= link_to "Update 🚽", edit_toilet_path(@toilet), class: "btn-submit" %>
+            <%= link_to "New Feature ✨", new_toilet_feature_path(@toilet), class: "btn-submit" %>
+          </p>
+      <% elsif current_user.nil? %>
+        <h3>You need to be logged in to book a toilet!</h3>
+      <% else %>
+        <h3>Welcome, <%= current_user.first_name %>!</h3>
       <% end %>
-    <% else %>
-      <div class="m-5 p-3"><%= render "bookings/new" %></div>
-    <% end %>
-  <div style="width: 100%; height: 600px;"
-    data-controller="mapbox"
-    data-mapbox-markers-value="<%= @marker.to_json %>"
-    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
+      <div class="container-details">
+
+          <p>
+            Brief Description: <%=@toilet.description%>
+          </p>
+          <p>
+            Features:
+            <%= render "features/index"%>
+          </p>
+          <div class="container-rating">
+          </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 col-sm-12 col-xs-12">
+      <% if current_user == @toilet.user%>
+      <% elsif current_user.nil? %>
+        <div class="p-3">
+          <h5>Please log in for booking options</h5>
+      <% else %>
+        <div class="p-3">
+          <%= render "bookings/new" %>
+        </div>
+        <%= render "shared/flash" %>
+      <% end %>
+       <div class="p-3" style="width: 100%; height: 450px;"
+            data-controller="mapbox"
+            data-mapbox-markers-value="<%= @marker.to_json %>"
+            data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+       </div>
+      </div>
+    </div>
 </div>

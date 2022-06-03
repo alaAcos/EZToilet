@@ -3,17 +3,24 @@
 <!-- Source of the code = > https://startbootstrap.com/snippets/video-header -->
 <body>
 <!-- SECTION 1 VIDEO BANNER -->
-  <div class="overlay"></div>
-
+  <div class="overlay">
+  </div>
   <div class="video-container">
-
     <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
       <source src="https://res.cloudinary.com/oneiri-ug/video/upload/v1654118927/toilet-paper.mov" type="video/mp4">
     </video>
-
     <div class="video-overlay-card"><br>
       <div class="video-banner-logo">
         <%= image_tag("eztoiletlogo") %>
+        <% if user_signed_in? %>
+          <%= link_to "Toilet of your dreams ✨", toilets_path, class: "btn-submit small"%>
+        <% else %>
+          <%= link_to "Login", new_user_session_path, class: "btn-submit" %>
+          <div class="mt-4">
+          <p>Are you new here?</p>
+          <%= link_to "Sign up", new_user_registration_path, class: "btn-submit"%>
+        </div>
+        <% end %>
       </div>
       <div class="name"><h4>Take a S***!(sit)</h4></div>
       <div class="btn-header-submit">Discover EZToilet!</div>

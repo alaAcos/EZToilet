@@ -1,0 +1,37 @@
+.usertoilets {
+  border-left: solid 1px $background-c;
+}
+
+.dashboardlist-item {
+  background-color: white;
+  border: solid 1px $font-c;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+.toiletcolumn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sublist {
+  padding: 8px;
+}
+
+.sublist-item {
+  border: solid 1px $font-c;
+  padding: 8px;
+  margin-bottom: 8px;
+  background-color: white;
+  transition: 0.3s;
+  &:hover {
+    background-color: $body-background-c;
+  }
+}
+
+.dashboard-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  box-shadow: 0 0 8px rgb(76, 74, 74);
+}
