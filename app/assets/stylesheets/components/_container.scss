@@ -1,3 +1,48 @@
+.page-container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+}
+
+.container {
+  background-color: white !important;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-left: 40px;
+  margin-right: 40px;
+  height: 100%;
+  // height: 80vh;
+}
+
+.content-container {
+  background-color: white !important;
+  margin-top: 50px
+}
+
+.body-container {
+  background-color: white !important;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-left: 40px;
+  margin-right: 40px;
+  height: 100%;
+}
+
+.index-right-container {
+  background-color: white !important;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-left: 40px;
+  margin-right: 40px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.flexbox {
+  display: flex;
+}
+
 .container-details {
   margin-top: 50px;
   font-size: 25px;

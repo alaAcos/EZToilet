@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 2022_06_03_105223) do
     t.float "latitude"
     t.float "longitude"
     t.string "address", default: ""
+    t.string "currency"
     t.index ["user_id"], name: "index_toilets_on_user_id"
   end
 

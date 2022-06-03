@@ -1,37 +1,57 @@
+<head> </head>
+
+<body>
+<!-- SECTION 1 TITLE-->
 <div class="container">
-  <%= form_tag toilets_path, method: :get do %>
-    <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a toilet"
-    %>
-    <%= submit_tag "Search", class: "btn-submit" %>
-  <% end %>
+  <div class="title"><h1>Pick up your EZToilet!</h1></div>
+<!-- SECTION 1 CARDS CONTAINER-->
   <div class="cards-container">
-    <div class="cards">
-      <% @toilets.each do |toilet| %>
-        <%= link_to toilet_path(toilet) do %>
-          <div class="card">
-            <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path toilet.photos.first.key, height: 300 %>')">
-            </div>
-            <div class="information ps-3 d-flex justify-content-space-between">
-              <div class="infomations">
-                <div class="name"><h4><%= toilet.name %></h4></div>
-                <div class="description"><p><%= toilet.description.truncate(30) %></p></div>
-                <div class="price"><p><%= toilet.price %></p></div>
+    <div class="row">
+      <div class="col-sm">
+        <div class="cards">
+          <% @toilets.each do |toilet| %>
+            <%= link_to toilet_path(toilet) do %>
+              <div class="card">
+                <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path toilet.photos.first.key, height: 300, crop: :fill %>')"></div>
+                <div class="information ps-3 d-flex justify-content-space-between">
+                  <div class="informations">
+                    <div class="name"><h4><%= toilet.name %></h4></div>
+                    <div class="description"><p><%= toilet.description.truncate(30) %></p></div>
+                    <div class="price"><p><%= toilet.price %> <%= toilet.currency %></p></div>
+                  </div>
+                  <div class="rating">
+                    <p><%= toilet.rating%></p>
+                  </div>
+                </div>
               </div>
-              <div class="rating">
-                <p><%= toilet.rating%></p>
-              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+<!-- SECTION 2 SEARCH BAR AND MAP-->
+      <div class="col-sm">
+        <div class="index-right-container align-self-center">
+          <div class="searchbar">
+            <%= form_tag toilets_path, method: :get do %>
+              <%= text_field_tag :query,
+                params[:query],
+                class: "form-control",
+                placeholder: "Find a EZToilet"
+              %>
+              <%= submit_tag "Search", class: "btn btn-submit-plain" %>
+            <% end %>
+          </div>
+
+          <div class="map">
+            <div style="width: 100%; height: 600px;"
+              data-controller="mapbox"
+              data-mapbox-markers-value="<%= @markers.to_json %>"
+              data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
             </div>
           </div>
-        <% end %>
-      <% end %>
+        </div>
+      </div>
     </div>
   </div>
-  <div style="width: 100%; height: 600px;"
-    data-controller="mapbox"
-    data-mapbox-markers-value="<%= @markers.to_json %>"
-    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
 </div>
+</body>

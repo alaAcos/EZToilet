@@ -10,7 +10,7 @@
 }
 
 .video-container {
-  height: 500px;
+  height: 1000px;
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -31,14 +31,16 @@
 /* Just styling the content of the div, the *magic* in the previous rules */
 .video-container .video-overlay-card {
   width: 300px;
-  height: 400px;
+  height: 210px;
   z-index: 1;
   position: relative;
   text-align: center;
   color: $font-c;
-  padding: 15px;
+  padding: 1px;
   background-color: $background-c;
-  border-radius: 12px;
-  // border: solid 1px $color1;
+  border-radius: 25px;
+  border: solid 1px $background-c;
+  padding-right: 3px;
+  padding-left: 3px;
   transform: translateX(-50%);
 }

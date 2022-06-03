@@ -4,28 +4,19 @@
 //   // height: 80vh;
 // }
 
-.container {
-  background-color: white;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  margin-left: 40px;
-  margin-right: 40px;
-  height: 100%;
-  // height: 80vh;
-}
-
 .title {
   text-align: center;
   font-family: 'Anton', sans-serif;
-  padding-top: 40px;
+  padding-top: 15px;
   // border-bottom: solid 1px black; //
-  background-color: white;
+  background-color: transparent;
 }
 
 .title h1 {
   color: $header-font-c;
   font-size: 72px;
   font-style: bold;
+  text-align: center;
   background-color: white;
 }
 
@@ -33,7 +24,7 @@
   color: $header-font-c;
   font-size: small;
   font-style: normal;
-  background-color: white;
+  background-color: $header-font-c;
 }
 
 .title h3 {
@@ -52,14 +43,6 @@
   margin: 20px;
   margin-top: 40px;
   padding-bottom: 40px;
-}
-
-.homepage-container {
-  background-color: white;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  margin-left: 40px;
-  margin-right: 40px;
 }
 
 .video-title {
@@ -86,11 +69,11 @@
     font-style: italic;
     }
 
-.body-container {
-  background-color: white;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  margin-left: 40px;
-  margin-right: 40px;
-  height: 100%;
+.video-container{
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
+.video-banner-logo {
+  margin-bottom: 20px;
 }
