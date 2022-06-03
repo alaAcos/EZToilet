@@ -1,52 +1,63 @@
-<!-- The header content -->
-<!-- Source of the code = > https://startbootstrap.com/snippets/video-header -->
 
-<div class="body-wrapper" class="d-flex container-fluid">
-  <body>
-  <!-- First container -->
-    <div class="overlay"></div>
-    <div class="title">
-      <%= image_tag("eztoiletlogo") %>
-      <h2>Take a S*** ! (sit)</h2>
-    </div>
-    <div class="video-container">
-      <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-        <source src="https://res.cloudinary.com/oneiri-ug/video/upload/v1654118927/toilet-paper.mov" type="video/mp4">
-      </video>
-      <div class="video-overlay-card">
-        <h1> Take a S***!(sit) with EZToilet</h1>
-        <p class="header-p"> With EZToilet, you will be able to s*** wherever you want! </p>
+<head></head>
+<!-- Source of the code = > https://startbootstrap.com/snippets/video-header -->
+<body>
+<!-- SECTION 1 VIDEO BANNER -->
+  <div class="overlay">
+  </div>
+  <div class="video-container">
+    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+      <source src="https://res.cloudinary.com/oneiri-ug/video/upload/v1654118927/toilet-paper.mov" type="video/mp4">
+    </video>
+    <div class="video-overlay-card"><br>
+      <div class="video-banner-logo">
+        <%= image_tag("eztoiletlogo") %>
         <% if user_signed_in? %>
           <%= link_to "Toilet of your dreams ✨", toilets_path, class: "btn-submit small"%>
-        <%else%>
+        <% else %>
           <%= link_to "Login", new_user_session_path, class: "btn-submit" %>
           <div class="mt-4">
           <p>Are you new here?</p>
           <%= link_to "Sign up", new_user_registration_path, class: "btn-submit"%>
         </div>
-        <%end%>
+        <% end %>
+      </div>
+      <div class="name"><h4>Take a S***!(sit)</h4></div>
+      <div class="btn-header-submit">Discover EZToilet!</div>
+    </div>
+  </div>
+
+<!-- SECTION 2 CONTENT CONTAINER -->
+  <div class="content-container">
+    <div class="title"><h1>Discover EZToilet</h1></div>
+    <div class="homepage-cards-container">
+      <div class="homepage-cards">
+        <% @toilets.each do |toilet| %>
+        <%= link_to toilet_path(toilet) do %>
+          <div class="homepage-card">
+            <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path toilet.photos.first.key, height: 300, crop: :fill %>')"></div>
+            <div class="information ps-3 d-flex justify-content-space-between">
+              <div class="informations">
+                <div class="name"><h4><%= toilet.name %></h4></div>
+                <div class="description"><p><%= toilet.description.truncate(30) %></p></div>
+                <div class="price"><p><%= toilet.price %></p></div>
+              </div>
+              <div class="rating">
+                <p><%= toilet.rating%></p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+        <% end %>
       </div>
     </div>
-      <!-- TO DO : add a grid / Ask Grazia, Stephen or Adrien-->
-
-</div>
-      </div>
-    </div>
-      <!-- TO DO : solve the bug - Code the button -->
-    <div class="btn">
-      <%= link_to "I want to see more EZtoilets!", toilets_path, class: "text-decoration-none btn-submit" %>
-    </div>
-  </body>
-</div>
-
-<div class="footer">
-
-</div>
+    <div class="btn-home-submit py-3" >I want my EZToilet, now!</div>
+  </div>
+</body>
+<div class="footer"></div>
 
 
-
-
-<!-- OLD VERSION OF THE HOMEPAGE
+<!-- OLD VERSION OF THE HOMEPAGE - CARROUSSEL
 <div class="container">
 <section class="my-5">
   <div class="container">
