@@ -1,4 +1,5 @@
 class ToiletsController < ApplicationController
+
   def index
     if params[:query].present?
       sql_query = "name ILIKE :query OR description ILIKE :query"

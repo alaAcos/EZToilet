@@ -2,10 +2,7 @@ class Toilet < ApplicationRecord
   belongs_to :user
   has_many :bookings
   has_many :users, through: :bookings
-  has_many :associations
-  has_many :features, through: :associations
-  accepts_nested_attributes_for :features
-  attr_accessor :features_ids
+  has_many :features
 
   has_many_attached :photos
   geocoded_by :address
@@ -13,6 +10,7 @@ class Toilet < ApplicationRecord
 
   validates :name, presence: true, length: { in: 5..50 }
   validates :price, presence: true, numericality: { greater_than: 0 }
+  # validates :currency, presence: true, inclusion: { in: %w[€ $ £] }
   validates :description, presence: true, length: { in: 10..500 }
   validates :address, presence: true
 

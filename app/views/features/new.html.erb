@@ -1,7 +1,7 @@
   <div class="container">
     <h2 class="text-center">Add a feature to your 🚽</h2>
       <div class="form-container">
-        <%= simple_form_for [@toilet,@feature] do |f| %>
+        <%= simple_form_for ([@toilet, @feature]) do |f| %>
               <div class="mb-3">
         <%= f.input :name, label: 'Name', as: :string %>
               </div>
