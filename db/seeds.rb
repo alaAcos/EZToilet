@@ -41,3 +41,11 @@ admin = User.new(
   password_confirmation: "toiletadmin"
 )
 admin.save!
+
+dareos = User.new(
+  email: "dareos@eztoilet.com",
+  first_name: "Dareos",
+  last_name: "Lewagon",
+  password: "dareostoilet",
+  password_confirmation: "dareostoilet"
+)
