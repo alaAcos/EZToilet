@@ -28,9 +28,16 @@ addresses = ["WMJQ+WPX, Edinburgh of the Seven Seas TDCU 1ZZ, St. Helena", "Lond
     user: user,
     address: addresses[rand(0..(addresses.length - 1))]
   )
+  feature = Feature.new(
+    name: ["Toilet Paper", "Bidet", "Brush", "Window", "Amazing View", "Air Freshner", "Magazines"].sample(1).join,
+    presence: [true, false].sample,
+    details: Faker::GreekPhilosophers.quote,
+    toilet: toilet
+  )
   toilet.photos.attach(io: file, filename: 'toilet.png', content_type: 'image.png')
   user.save!
   toilet.save!
+  feature.save!
 end
 
 admin = User.new(

@@ -1,9 +1,10 @@
 <ul>
   <%@toilet.features.each do |feature|%>
-    <li><%=feature.name%></h4>
-    <% if @toilet.user == current_user %>
-      <%=link_to "📝", edit_toilet_feature_path(feature.toilet, feature), class: "font-size-20"%>
-    <%end%>
+      <li>
+      <%=feature.name%>
+      <% if @toilet.user == current_user %>
+        <%=link_to "📝", edit_toilet_feature_path(feature.toilet, feature), class: "font-size-20"%>
+      <%end%>
     </li>
   <%end%>
 </ul>
