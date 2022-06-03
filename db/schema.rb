@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_02_193206) do
+ActiveRecord::Schema.define(version: 2022_06_03_101756) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,15 +41,6 @@ ActiveRecord::Schema.define(version: 2022_06_02_193206) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
-  end
-
-  create_table "assignments", force: :cascade do |t|
-    t.bigint "toilet_id", null: false
-    t.bigint "feature_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["feature_id"], name: "index_assignments_on_feature_id"
-    t.index ["toilet_id"], name: "index_assignments_on_toilet_id"
   end
 
   create_table "associations", force: :cascade do |t|
@@ -93,6 +84,7 @@ ActiveRecord::Schema.define(version: 2022_06_02_193206) do
     t.float "latitude"
     t.float "longitude"
     t.string "address", default: ""
+    t.string "currency"
     t.index ["user_id"], name: "index_toilets_on_user_id"
   end
 

@@ -13,6 +13,7 @@ class Toilet < ApplicationRecord
 
   validates :name, presence: true, length: { in: 5..50 }
   validates :price, presence: true, numericality: { greater_than: 0 }
+  # validates :currency, presence: true, inclusion: { in: %w[€ $ £] }
   validates :description, presence: true, length: { in: 10..500 }
   validates :address, presence: true
 

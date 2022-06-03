@@ -23,6 +23,7 @@ addresses = ["WMJQ+WPX, Edinburgh of the Seven Seas TDCU 1ZZ, St. Helena", "Lond
   toilet = Toilet.new(
     name: Faker::Movies::LordOfTheRings.location,
     price: rand(0..10_000),
+    currency: "€",
     description: Faker::GreekPhilosophers.quote,
     user: user,
     address: addresses[rand(0..(addresses.length - 1))]
