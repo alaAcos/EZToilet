@@ -49,3 +49,15 @@ dareos = User.new(
   password: "dareostoilet",
   password_confirmation: "dareostoilet"
 )
+dareos.avatar = URI.open('https://ca.slack-edge.com/T02NE0241-U0113CLED54-5b2270d8e438-72')
+dareos.save!
+
+ivo = User.new(
+  email: "ivo@eztoilet.com",
+  first_name: "Ivo",
+  last_name: "Lewagon",
+  password: "ivotoilet",
+  password_confirmation: "ivotoilet"
+)
+ivo.avatar = URI.open('https://ca.slack-edge.com/T02NE0241-U016WV76ATS-d7e2418250ba-72')
+ivo.save!
