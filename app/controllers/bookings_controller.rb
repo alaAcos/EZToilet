@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
     @booking.toilet = @toilet
     if @booking.save
       flash[:success] = "Your request successfully submitted! 🚽"
-      redirect_to toilet_path(@booking.toilet)
+      redirect_to dashboard_path
     else
       render :new
     end
