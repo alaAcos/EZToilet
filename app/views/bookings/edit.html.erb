@@ -3,7 +3,7 @@
   <h2>You have a new request by <%=@booking.user.first_name%> <%=@booking.user.last_name%></h2>
   <div class="form-container">
     <%= simple_form_for ([@toilet, @booking]) do |f| %>
-      <%= f.input :status, label: 'Confirmation', as: :string %>
+      <%= f.input :status, label: 'Confirmation', collection: ["pending", "confirmed", "denied"] %>
       <%= f.submit 'Reply', class: "btn-submit"%>
     <% end %>
   </div>

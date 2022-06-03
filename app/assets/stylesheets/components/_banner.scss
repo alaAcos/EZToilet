@@ -1,10 +1,13 @@
 .carousel-banner {
    border-radius: 55px 55px 55px 55px;
-   height: 350px;
+   height: 450px;
    margin-bottom: 60px;
    margin-top: 20px;
    margin-left: 50px;
    margin-right: 50px;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
 }
 
 .text-banner-container {
