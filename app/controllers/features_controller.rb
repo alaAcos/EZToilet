@@ -2,7 +2,7 @@ class FeaturesController < ApplicationController
   before_action :set_toilet
 
   def index
-    @features = @toilet.features
+    @features = Feature.all
   end
 
   def new
@@ -10,14 +10,24 @@ class FeaturesController < ApplicationController
   end
 
   def create
-    @feature = Feature.new(feature_params)
-    @feature.toilets << @toilet
+    @feature = @toilet.features.new(feature_params)
+    @feature.toilet = @toilet
     if @feature.save
-      flash[:success] = "Your feature has been successfully added! 🗞"
+      flash[:success] = " Feature successfully added! 🚽"
       redirect_to toilet_path(@toilet)
     else
       render :new
     end
+  end
+
+  def edit
+    @feature = @toilet.features.find(params[:id])
+  end
+
+  def update
+    @feature = @toilet.features.find(params[:id])
+    @feature.update(feature_params)
+    @feature.save ? (redirect_to toilet_path(@feature.toilet)) : (render :edit)
   end
 
   private
