@@ -31,14 +31,14 @@
 /* Just styling the content of the div, the *magic* in the previous rules */
 .video-container .video-overlay-card {
   width: 300px;
-  height: 300px;
+  height: 400px;
   z-index: 1;
   position: relative;
   text-align: center;
   color: $font-c;
-  padding: 8px;
+  padding: 15px;
   background-color: $background-c;
-  border-radius: 5px;
-  border: solid 1px $color1;
+  border-radius: 12px;
+  // border: solid 1px $color1;
   transform: translateX(-50%);
 }

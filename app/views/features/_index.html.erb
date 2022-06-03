@@ -1,0 +1,9 @@
+<ul>
+  <%@toilet.features.each do |feature|%>
+    <li><%=feature.name%></h4>
+    <% if @toilet.user == current_user %>
+      <%=link_to "Edit", edit_toilet_feature_path(feature), class: "btn-submit"%>
+    <%end%>
+    </li>
+  <%end%>
+</ul>

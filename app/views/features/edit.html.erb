@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Welcome, <%=@toilet.user.first_name%> <%=@toilet.user.last_name%></h1>
+  <div class="form-container">
+    <%= simple_form_for [@toilet, @features] do |f| %>
+      <div class="mb-3">
+        <%= f.input :name, label: 'Name', as: :string %>
+              </div>
+              <div class="mb-3">
+        <%= f.input :presence, label: 'Available', as: :boolean %>
+              </div>
+              <div class="mb-3">
+        <%= f.input :details, label: 'Description', as: :text %>
+              </div>
+      <%= f.submit 'Update!', class: "btn-submit"%>
+    <% end %>
+  </div>
+</div>
