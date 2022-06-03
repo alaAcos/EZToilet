@@ -9,8 +9,9 @@
       <% if current_user == @toilet.user%>
         <h3>Welcome, <%= @toilet.user.first_name %> <%= @toilet.user.last_name %>, what you would like to do for your toilet?</h3>
           <p>
-            <%= link_to "Update 🚽", edit_toilet_path(@toilet), class: "btn-submit" %>
-            <%= link_to "New Feature ✨", new_toilet_feature_path(@toilet), class: "btn-submit" %>
+            <%=link_to "Update 🚽", edit_toilet_path(@toilet), class: "btn-submit"%>
+            <%=link_to "New Feature ✨", new_toilet_feature_path(@toilet), class: "btn-submit"%>
+            <%=link_to "Bookings 📩", dashboard_path,  class: "btn-submit"%>
           </p>
       <% elsif current_user.nil? %>
         <h3>You need to be logged in to book a toilet!</h3>
@@ -20,7 +21,7 @@
       <div class="container-details">
 
           <p>
-            Brief Description: <%=@toilet.description%>
+            <strong>Brief Description:</strong> <%=@toilet.description%> - <strong>Cost:</strong> <%=@toilet.price%>
           </p>
           <p>
             Features:
