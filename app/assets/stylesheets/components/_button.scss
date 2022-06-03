@@ -6,6 +6,8 @@
   font-family: $body-font;
   font-size: 20px;
   color: $font-c;
+  margin-top: 5px;
+  margin-bottom: 5px;
   padding: 5px;
   text-decoration: none;
 }
@@ -22,6 +24,7 @@
   background-color: $font-c;
   font-family: $body-font;
   font-size: 20px;
+  border-radius: 0 5px 5px 0;
   color: white;
   padding: 5px;
   text-decoration: none;

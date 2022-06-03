@@ -43,15 +43,6 @@ ActiveRecord::Schema.define(version: 2022_06_02_193206) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "assignments", force: :cascade do |t|
-    t.bigint "toilet_id", null: false
-    t.bigint "feature_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["feature_id"], name: "index_assignments_on_feature_id"
-    t.index ["toilet_id"], name: "index_assignments_on_toilet_id"
-  end
-
   create_table "associations", force: :cascade do |t|
     t.bigint "toilet_id", null: false
     t.bigint "feature_id", null: false
