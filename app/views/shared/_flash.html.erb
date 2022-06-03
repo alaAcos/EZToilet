@@ -1,4 +1,3 @@
-<% if flash.any? %>
 <% flash.each do |type, message| %>
   <div class="flash flash-success alert alert-dismissible fade show" role="alert">
     <span><strong>Yay!</strong> 🎉 <%=message%></span>
@@ -6,5 +5,4 @@
       <i class="fas fa-times"></i>
     </a>
   </div>
-<% end %>
 <% end %>

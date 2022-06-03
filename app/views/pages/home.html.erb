@@ -15,32 +15,20 @@
       </video>
       <div class="video-overlay-card">
         <h1> Take a S***!(sit) with EZToilet</h1>
-        <p class="header-p"> With EZToilet, you will be able to s*** wherever you want! <br> In only, <a href="../app/views/toilets/index.html.erb" target="blank"> 1 click </a>, choose the EZToilet of your dreams!</p>
-        <div class="btn-header-submit">Discover EZToilet!</div>
+        <p class="header-p"> With EZToilet, you will be able to s*** wherever you want! </p>
+        <% if user_signed_in? %>
+          <%= link_to "Toilet of your dreams ✨", toilets_path, class: "btn-submit small"%>
+        <%else%>
+          <%= link_to "Login", new_user_session_path, class: "btn-submit" %>
+          <div class="mt-4">
+          <p>Are you new here?</p>
+          <%= link_to "Sign up", new_user_registration_path, class: "btn-submit"%>
+        </div>
+        <%end%>
       </div>
     </div>
       <!-- TO DO : add a grid / Ask Grazia, Stephen or Adrien-->
-    <div class="cards-container-homepage">
-      <div class="cards-1line">
-        <% @toilets.each do |toilet| %>
-        <%= link_to toilet_path(toilet) do %>
-          <div class="card">
-            <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path toilet.photos.first.key, height: 300, crop: :fill %>')">
-            </div>
-            <div class="information ps-3 d-flex justify-content-space-between">
-              <div class="infomations">
-                <div class="name"><h4><%= toilet.name %></h4></div>
-                <div class="description"><p><%= toilet.description.truncate(30) %></p></div>
-                <div class="price"><p><%= toilet.price %></p></div>
-              </div>
-              <div class="rating">
-                <p><%= toilet.rating%></p>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
+
 </div>
       </div>
     </div>

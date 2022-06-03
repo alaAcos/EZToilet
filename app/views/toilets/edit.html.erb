@@ -1,9 +1,12 @@
-<h1>Edit a Toilet</h1>
-
-<%= simple_form_for [ @toilet ] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.input :photos, as: :file, input_html: {multiple:true} %>
-  <%= f.submit "Edit toilet" %>
-<% end %>
+<div class="container">
+  <h1 class="text-center">Edit a Toilet</h1>
+  <div class="form-container">
+    <%= simple_form_for [ @toilet ] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :price %>
+      <%= f.input :photos, as: :file, input_html: {multiple:true} %>
+      <%= f.submit "Edit toilet" %>
+    <% end %>
+  </div>
+</div>

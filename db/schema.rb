@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_02_133606) do
+ActiveRecord::Schema.define(version: 2022_06_02_193206) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,15 @@ ActiveRecord::Schema.define(version: 2022_06_02_133606) do
     t.index ["toilet_id"], name: "index_assignments_on_toilet_id"
   end
 
+  create_table "associations", force: :cascade do |t|
+    t.bigint "toilet_id", null: false
+    t.bigint "feature_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["feature_id"], name: "index_associations_on_feature_id"
+    t.index ["toilet_id"], name: "index_associations_on_toilet_id"
+  end
+
   create_table "bookings", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "toilet_id", null: false
@@ -65,14 +74,9 @@ ActiveRecord::Schema.define(version: 2022_06_02_133606) do
   end
 
   create_table "features", force: :cascade do |t|
-    t.boolean "magazines"
-    t.boolean "toilet_paper"
-    t.boolean "bidet"
-    t.boolean "sit_warming"
-    t.boolean "funny_flushing_sound"
-    t.boolean "window"
-    t.boolean "air_freshner"
-    t.boolean "washlet"
+    t.string "name"
+    t.boolean "presence"
+    t.text "details"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -108,8 +112,8 @@ ActiveRecord::Schema.define(version: 2022_06_02_133606) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "assignments", "features"
-  add_foreign_key "assignments", "toilets"
+  add_foreign_key "associations", "features"
+  add_foreign_key "associations", "toilets"
   add_foreign_key "bookings", "toilets"
   add_foreign_key "bookings", "users"
   add_foreign_key "toilets", "users"

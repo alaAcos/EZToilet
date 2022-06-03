@@ -1,21 +1,40 @@
  <div class="container">
   <div class="row">
     <div class="col-12">
+    <h1 class="text-center"><%=@toilet.name%></h1>
     <div class="carousel-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @toilet.photos.first.key, height: 300 %>')">
     </div>
     </div>
     <div class="col-md-8 col-sm-12 col-xs-12">
-      <h1><%=@toilet.user.first_name%> <%=@toilet.user.last_name%> welcomes you at <%=@toilet.name%></h1>
-      <p>
-        <%=@toilet.description%>
-      </p>
+      <% if current_user == @toilet.user%>
+        <h3>Welcome, <%=@toilet.user.first_name%> <%=@toilet.user.last_name%>, what you would like to do for your toilet?</h3>
+          <p>
+            <%=link_to "Update 🚽", edit_toilet_path(@toilet), class: "btn-submit"%>
+            <%=link_to "New Feature ✨", new_toilet_feature_path(@toilet), class: "btn-submit"%>
+          </p>
+      <%else%>
+        <h3>Welcome, <%=current_user.first_name%>!</h3>
+      <%end%>
+      <div class="container-details">
+
+          <p>
+            Brief Description: <%=@toilet.description%>
+          </p>
+          <p>
+            Features:
+            <%= render "features/index"%>
+          </p>
+          <div class="container-rating">
+          </div>
+      </div>
     </div>
-    <%= render "shared/flash" %>
+
     <div class="col-md-4 col-sm-12 col-xs-12">
       <% if current_user == @toilet.user%>
 
       <%else%>
         <div class="p-3"><%= render "bookings/new" %></div>
+        <%= render "shared/flash" %>
       <%end%>
        <div class="p-3" style="width: 100%; height: 450px;"
             data-controller="mapbox"
