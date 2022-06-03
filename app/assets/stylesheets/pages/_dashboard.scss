@@ -1,5 +1,10 @@
 .usertoilets {
   border-left: solid 1px $background-c;
+  padding-top: 8px;
+}
+
+.userbookings {
+  padding-top: 8px;
 }
 
 .dashboardlist-item {
@@ -34,4 +39,17 @@
   height: 100px;
   border-radius: 5px;
   box-shadow: 0 0 8px rgb(76, 74, 74);
+}
+
+.userdetails {
+  border-bottom: solid 1px $background-c;
+  padding: 8px;
+}
+
+.interactions {
+  height: 100vh;
+}
+
+.boldtext {
+  font-weight: bold;
 }
