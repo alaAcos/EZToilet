@@ -5,6 +5,56 @@
 $body-font: "Work Sans", "Open Sans", "sans-serif";
 $headers-font: "Nunito", "Open Sans", "sans-serif";
 
+.title {
+  text-align: center;
+  font-family: $headers-font;
+  padding-top: 15px;
+  // border-bottom: solid 1px black; //
+  background-color: transparent;
+}
+
+.title h1 {
+  color: #273043;
+  font-size: 72px;
+  font-style: bold;
+  text-align: center;
+}
+
+.title h2 {
+  color: #273043;
+  font-size: 48px;
+  font-style: bold;
+}
+
+.title h3 {
+  color: #273043;
+  font-size: 32px;
+  font-style: bold;
+}
+
+.video-title {
+  text-align: center;
+  font-family: "Work Sans", "Open Sans", "sans-serif";
+  background-color: transparent;
+}
+
+.video-title h1 {
+  color: #273043;
+  font-size: 36px;
+  font-style: bold;
+}
+
+.video-title h2 {
+  color: #F92A82;
+  font-size: 48px;
+  font-style: normal;
+}
+
+.boldtext {
+  font-weight: bold;
+}
+
+
 // To use a font file (.woff) uncomment following lines
 // @font-face {
 //   font-family: "Font Name";
