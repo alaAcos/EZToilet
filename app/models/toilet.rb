@@ -3,6 +3,7 @@ class Toilet < ApplicationRecord
   has_many :bookings
   has_many :users, through: :bookings
   has_many :features
+  has_many :reviews
 
   has_many_attached :photos
   geocoded_by :address

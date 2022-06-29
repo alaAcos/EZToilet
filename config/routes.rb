@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   resources :toilets do
     resources :bookings, only: %i[index create edit update] # new
     resources :features, only: %i[new create edit update] # index, new
+    resources :reviews, only: %i[new create]
   end
 end

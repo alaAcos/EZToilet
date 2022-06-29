@@ -6,5 +6,6 @@ class User < ApplicationRecord
   has_many :toilets
   has_many :bookings
   has_many :toilets, through: :bookings
+  has_many :reviews
   has_one_attached :avatar
 end
