@@ -72,3 +72,27 @@
   background-color: $font-c;
   color: white;
 }
+
+.main-button {
+  text-align: center;
+  margin: 20px;
+  margin-top: 40px;
+  padding-bottom: 40px;
+}
+
+.btn-info {
+  border-color: #F92A82;
+  border-style: solid;
+  border-radius: 5px;
+  background-color: white;
+  font-family: "Work Sans", "Helvetica", "sans-serif";
+  font-size: 20px;
+  color: #F92A82;
+  padding: 5px;
+  text-decoration: none;
+  &:hover {
+    background-color: #F92A82;
+    color: white;
+    border-color: #F92A82;
+  }
+}
