@@ -27,8 +27,7 @@
             Features:
             <%= render "features/index"%>
           </p>
-          <div class="container-rating">
-          </div>
+
       </div>
     </div>
 
@@ -42,11 +41,35 @@
           <%= render "bookings/new" %>
         </div>
       <% end %>
-       <div class="p-3" style="width: 100%; height: 450px;"
+      </div>
+
+    <div class="col-12 review-container">
+      <div class="container-rating">
+        <% current_user.bookings.each do |booking| %>
+          <% if booking.toilet == @toilet %>
+            <p>Leave a review for your last stay at <%= @toilet.name %> <%= link_to "Review toilet", new_toilet_review_path(@toilet), class: "btn-submit"%></p>
+            <%= render "reviews/new" %>
+          <% end %>
+        <% end %>
+        </div>
+      <% unless @reviews.empty? %>
+        <ul>
+          <% @reviews.each do |review| %>
+            <li>
+              <%= review.rating %>
+              <%= review.comment %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+
+    <div class="col-12">
+      <div class="p-3" style="width: 100%; height: 450px;"
             data-controller="mapbox"
             data-mapbox-markers-value="<%= @marker.to_json %>"
             data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
        </div>
-      </div>
     </div>
+  </div>
 </div>
