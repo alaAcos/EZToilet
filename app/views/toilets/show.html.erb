@@ -44,24 +44,25 @@
       </div>
 
     <div class="col-12 review-container">
+      <% unless @reviews.empty? %>
+        <div class="review-cards-container">
+            <% @reviews.each do |review| %>
+              <%= render "review", review: review%>
+            <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div data-controller="newreview">
       <div class="container-rating">
         <% current_user.bookings.each do |booking| %>
-          <% if booking.toilet == @toilet %>
-            <p>Leave a review for your last stay at <%= @toilet.name %> <%= link_to "Review toilet", new_toilet_review_path(@toilet), class: "btn-submit"%></p>
-            <%= render "reviews/new" %>
+          <% if booking.toilet == @toilet && booking.status == "confirmed" %>
+            <p>Leave a review for your last stay at <%= @toilet.name %> <button type="button" class="btn-submit" data-action="click->newreview#show">Review</button>
+            <div class="form-container d-none" data-newreview-target="reviewform">
+              <%= render 'reviews/new' %>
+            </div>
           <% end %>
         <% end %>
         </div>
-      <% unless @reviews.empty? %>
-        <ul>
-          <% @reviews.each do |review| %>
-            <li>
-              <%= review.rating %>
-              <%= review.comment %>
-            </li>
-          <% end %>
-        </ul>
-      <% end %>
     </div>
 
     <div class="col-12">
