@@ -20,7 +20,7 @@ class ToiletsController < ApplicationController
   def show
     @toilet = Toilet.find(params[:id])
     @booking = Booking.new
-    @reviews = @toilet.reviews
+    @reviews = @toilet.reviews.by_recently_created
     @review = Review.new
     @marker = [{ lat: @toilet.latitude, lng: @toilet.longitude, info_window: render_to_string(partial: "info_window", locals: { toilet: @toilet }), image_url: helpers.asset_url("toileticon.png")}]
   end
