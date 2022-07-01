@@ -150,11 +150,18 @@
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 6px;
   grid-row-gap: 2px;
-  height: 100%;
+  //height: 100%;
   padding-bottom: auto;
   margin-bottom: 0;
   height: 450px;
   overflow: scroll;
+}
+
+.review-first-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding-bottom: auto;
+  margin-bottom: 0;
 }
 
 .quote {

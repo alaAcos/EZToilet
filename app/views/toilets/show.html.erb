@@ -1,4 +1,4 @@
- <div class="container">
+<div class="container">
   <div class="row">
     <div class="col-12">
     <h1 class="text-center"><%=@toilet.name%></h1>
@@ -43,26 +43,29 @@
       <% end %>
       </div>
 
-    <div class="col-12 review-container">
-      <% unless @reviews.empty? %>
-        <div class="review-cards-container">
+    <div class="col-12 review-container" data-controller="reviews">
+        <% if @reviews.empty? %>
+          <div class="review-first-container" data-reviews-target="review">
+          </div>
+        <% else %>
+          <div class="review-cards-container" data-reviews-target="review">
             <% @reviews.each do |review| %>
               <%= render "review", review: review%>
             <% end %>
+          </div>
         <% end %>
-      </div>
-    </div>
-    <div data-controller="newreview">
-      <div class="container-rating">
-        <% current_user.bookings.each do |booking| %>
-          <% if booking.toilet == @toilet && booking.status == "confirmed" %>
-            <p>Leave a review for your last stay at <%= @toilet.name %> <button type="button" class="btn-submit" data-action="click->newreview#show">Review</button>
-            <div class="form-container d-none" data-newreview-target="reviewform">
-              <%= render 'reviews/new' %>
-            </div>
+      <div data-controller="newreview">
+        <div class="container-rating">
+          <% current_user.bookings.each do |booking| %>
+            <% if booking.toilet == @toilet && booking.status == "confirmed" %>
+              <p>Leave a review for your last stay at <%= @toilet.name %> <button type="button" class="btn-submit" data-action="click->newreview#show">Review</button>
+              <div class="form-container d-none" data-newreview-target="reviewform">
+                <%= render 'reviews/new' %>
+              </div>
+            <% end %>
           <% end %>
-        <% end %>
         </div>
+      </div>
     </div>
 
     <div class="col-12">

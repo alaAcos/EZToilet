@@ -1,17 +1,17 @@
-<div class="quote">
-  <blockquote>
-    <header>
-    <span class="q-img" style="background: url('<%= cl_image_path review.user.avatar.key %>')"></span>
-    <small><%= review.user.first_name%> <%= review.user.last_name %></small>
-    </header>
-    <div class=review-text>
-      <span class="rating-review">
-        <% review.rating.times do %>
-          <i class="fas fa-star"></i>
-        <% end %>
-      </span>
-      <%= review.comment %>
-      <br><br>
-    </div>
-  </blockquote>
-</div>
+  <div class="quote">
+    <blockquote>
+      <header>
+      <span class="q-img" style="background: url('<%= cl_image_path review.user.avatar.key %>')"></span>
+      <small><%= review.user.first_name%> <%= review.user.last_name %></small>
+      </header>
+      <div class=review-text>
+        <span class="rating-review">
+          <% review.rating.times do %>
+            <i class="fas fa-star"></i>
+          <% end %>
+        </span>
+        <%= review.comment %>
+        <br><br>
+      </div>
+    </blockquote>
+  </div>

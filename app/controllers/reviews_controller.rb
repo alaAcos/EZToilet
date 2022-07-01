@@ -3,16 +3,21 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
+    @toilet = set_toilet
   end
 
   def create
     @review = Review.new(review_params)
     @review.toilet = set_toilet
     @review.user = current_user
-    if @review.save
-      redirect_to toilet_path(@review.toilet)
-    else
-      render :new
+    respond_to do |format|
+      if @review.save
+        format.html { redirect_to toilet_path(set_toilet) }
+        format.json
+      else
+        format.html { render "toilets/show" }
+        format.json
+      end
     end
   end
 
