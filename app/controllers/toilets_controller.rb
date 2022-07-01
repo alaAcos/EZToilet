@@ -22,6 +22,7 @@ class ToiletsController < ApplicationController
     @booking = Booking.new
     @review = Review.new
     @reviews = @toilet.reviews.by_recently_created
+    @average_rating = 0
     @marker = [
       {
         lat: @toilet.latitude,

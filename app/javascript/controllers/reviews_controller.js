@@ -22,7 +22,7 @@ export default class extends Controller {
       .then((data) => {
         console.log(data)
         if (data.inserted_item) {
-          this.reviewTarget.insertAdjacentHTML("beforeend", data.inserted_item)
+          this.reviewTarget.insertAdjacentHTML("afterbegin", data.inserted_item)
         }
         // this.formTarget.outerHTML = data.form
       })
