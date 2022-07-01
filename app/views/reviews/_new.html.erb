@@ -1,5 +1,5 @@
-<%= simple_form_for([@toilet, @review]) do |f| %>
+<%= simple_form_for(@review, url: toilet_reviews_url(@toilet, @review), data: { reviews_target: "form", action: "submit->reviews#send" }) do |f| %>
   <%= f.input :comment %>
-  <%= f.input :rating, collection: [["Awful", 1], ["Meh", 2], ["Average", 3], ["Pretty good", 4], ["Awesome", 5]], label: "Rate your experience", input_html: {data: {controller: "starrating"}}%>
-  <%= f.button :submit, class: "btn-submit"%>
+  <%= f.input :rating, collection: [["Awful",1], ["Meh", 2], ["Average", 3], ["Pretty funny", 4], ["Absolutely awesome", 5]], input_html: {data: {controller: "starrating"}}%>
+  <%= f.button :submit, class: "btn-submit" %>
 <% end %>
