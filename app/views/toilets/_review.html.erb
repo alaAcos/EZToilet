@@ -13,5 +13,8 @@
         <%= review.comment %>
         <br><br>
       </div>
+      <div class="created">
+        <%=review.created_at.strftime("On %m/%d/%Y")%>
+      </div>
     </blockquote>
   </div>

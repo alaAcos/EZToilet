@@ -48,6 +48,13 @@
           <div class="review-first-container" data-reviews-target="review">
           </div>
         <% else %>
+          <h3 class="text-center">
+            <% @toilet.reviews.each do |review|%>
+              <% @average_rating+=review.rating %>
+            <% end %>
+              <% @average_rating = (@average_rating.fdiv(@toilet.reviews.size)).round(2) %>
+              <%= @average_rating %> <i class="fas fa-star"></i> <span class="pink-dot">•</span> <%= @toilet.reviews.size %> reviews
+          </h3>
           <div class="review-cards-container" data-reviews-target="review">
             <% @reviews.each do |review| %>
               <%= render "review", review: review%>
@@ -58,10 +65,10 @@
         <div class="container-rating">
           <% current_user.bookings.each do |booking| %>
             <% if booking.toilet == @toilet && booking.status == "confirmed" %>
-              <p>Leave a review for your last stay at <%= @toilet.name %> <button type="button" class="btn-submit" data-action="click->newreview#show">Review</button>
               <div class="form-container d-none" data-newreview-target="reviewform">
                 <%= render 'reviews/new' %>
               </div>
+              <p class="text-center">Leave a review for your last stay at <%= @toilet.name %> <button type="button" class="btn-submit" data-action="click->newreview#show">Review</button>
             <% end %>
           <% end %>
         </div>
