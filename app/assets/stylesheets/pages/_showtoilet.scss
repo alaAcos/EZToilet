@@ -1,6 +1,8 @@
 .review-container {
   margin-top: 10px;
+  margin-bottom: 10px;
   border-top: 1px solid black;
+  border-bottom: 1px solid black;
   padding: 10px;
 }
 
@@ -8,6 +10,50 @@
   color: $font-c;
 }
 
-.feature-index {
-  list-style: none;
+.feature-table {
+  font-size: 18px;
+}
+
+.check {
+  color: rgb(9, 155, 9);
+}
+
+.uncheck {
+  color: rgb(160, 7, 7);
+}
+
+.container-photos {
+  width: 100%;
+  height: 450px;
+}
+
+.grid-gallery {
+  display: grid;
+  grid-auto-flow: row dense;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 8px 8px;
+  justify-items: stretch;
+  justify-content: stretch;
+  width: 100%;
+  height: 100%;
+}
+
+.item-left {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  background-size: cover;
+  background-position: center;
+}
+
+.item-right-up {
+  background-size: cover;
+  background-position: center;
+}
+
+.item-right-low {
+  background-size: cover;
+  background-position: center;
 }

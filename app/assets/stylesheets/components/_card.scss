@@ -255,6 +255,30 @@ header {
   font-size: 12px;
 }
 
+.host-info-card {
+  box-shadow: 0 0 15px rgb(183, 180, 180);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  margin-top: 16px;
+}
+
+.host-info-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.host-avatar {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
