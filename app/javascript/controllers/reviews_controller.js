@@ -24,7 +24,7 @@ export default class extends Controller {
         if (data.inserted_item) {
           this.reviewTarget.insertAdjacentHTML("afterbegin", data.inserted_item)
         }
-        // this.formTarget.outerHTML = data.form
+        // this.formTarget.outerHTML = form
       })
   }
 }

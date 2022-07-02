@@ -1,10 +1,32 @@
-<ul class="feature-index">
-  <%@toilet.features.each do |feature|%>
-      <li>
-      <%=feature.name%>
-      <% if @toilet.user == current_user %>
-        <%=link_to "📝", edit_toilet_feature_path(feature.toilet, feature), class: "font-size-20"%>
-      <%end%>
-    </li>
-  <%end%>
-</ul>
+<table class="feature-table">
+  <%@toilet.features.uniq.each do |feature|%>
+      <tr>
+        <td>
+        <% if feature.name.include? "Toilet Paper"%>
+          <i class="fas fa-toilet-paper"></i>
+        <% elsif feature.name.include? "Bidet"%>
+          <i class="fas fa-faucet"></i>
+        <% elsif feature.name.include? "View"%>
+          <i class="fas fa-image"></i>
+        <% elsif feature.name.include? "Brush"%>
+          <i class="fas fa-broom"></i>
+        <% elsif feature.name.include? "Window"%>
+          <i class="fab fa-windows"></i>
+        <% elsif feature.name.include? "Air Freshner"%>
+          <i class="fa-solid fa-spray-can-sparkles"></i>
+        <% elsif feature.name.include? "Magazines"%>
+          <i class="fa-solid fa-book"></i>
+        <% end%>
+        <%=feature.name%>
+        </td>
+        <% if feature.presence %>
+          <td><span class="check"><i class="fas fa-check"></i></span></td>
+        <% else %>
+          <td><span class="uncheck"><i class="fas fa-xmark"></i></span></td>
+        <% end %>
+      </tr>
+  <% end %>
+</table>
+<% if @toilet.user == current_user %>
+  <%=link_to "📝", edit_toilet_feature_path(feature.toilet, feature), class: "font-size-20"%>
+<%end%>
